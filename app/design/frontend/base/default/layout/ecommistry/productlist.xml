@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="Ecommistry_ProductList">
+                <name>productlist</name>
+                <path>productlist/customer/</path>
+                <label>Product List</label>
+            </action>
+        </reference>
+    </customer_account>
+	
+	<ecommistry_productlist_customer_index translate="label">
+        <label>Product List</label>
+		
+        <update handle="customer_account" />
+		
+		
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="customer.productlist" template="ecommistry/productlist/customer.phtml">
+                
+				<action method="setTitle" translate="title">
+					<title>Product List</title>
+				</action>			
+				
+				<block type="ecommistry_productlist/list" name="product_list" template="ecommistry/productlist/list.phtml">
+					<action method="addItem"><type>css</type><path>ecommistry/productlist/OwlCarousel/assets/owl.carousel.min.css</path></action>
+					<action method="addItem"><type>css</type><path>ecommistry/productlist/OwlCarousel/assets/owl.theme.default.min.css</path></action>
+					<action method="addItem"><type>javascript</type><path>ecommistry/productlist/OwlCarousel/owl.carousel.min.js</path></action>
+				
+					<block type="ecommistry/productlist_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">						
+						<block type="page/html_pager" name="product_list_toolbar_pager"/>
+					</block>
+					<action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+					<action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+					<action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+					<action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+					<action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+					<action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+					<action method="setColumnCount"><columns>3</columns></action>
+				</block>
+            </block>
+        </reference>
+    </ecommistry_productlist_customer_index>
+	
+	<!--<ecommistry_productlist_index_index>
+		<label>Product List</label>
+		<update handle="customer_account"/>
+		<reference name="head">
+			
+		</reference>
+		
+		<reference name="my.account.wrapper">
+            <block type="core/template" name="customer.ecommistry_productlist" template="ecommistry/productlist/account.phtml">
+                <action method="setTitle" translate="title">
+                    <title>Product List</title>
+                </action>
+                <block type="ecommistry_productlist/list" name="product_list" template="ecommistry/productlist/list.phtml">
+
+                </block>
+            </block>
+        </reference>
+		
+	</ecommistry_productlist_index_index>-->
+	
+	
+    
+    <!--<ecommistry_productlist_index_index translate="label">
+        <label>Product List</label>
+        <update handle="customer_account" />
+        <reference name="head">
+            <block type="ecommistry_productlist/header" name="header.ecommistry_productlist" as="ecommistry_productlist" template="ecommistry/productlist/header.phtml"/>
+            <action method="setTitle" translate="title"><title>Product List</title></action>
+            <action method="addItem"><type>skin_js</type><name>ecommistry/js/jquery-3.2.0.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>ecommistry/jquery.bxslider/jquery.bxslider.min.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>ecommistry/jquery.bxslider/jquery.bxslider.min.css</name></action>
+        </reference>
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="customer.ecommistry_productlist" template="ecommistry/productlist/account.phtml">
+                <action method="setTitle" translate="title">
+                    <title>Product List</title>
+                </action>
+                <block type="ecommistry_productlist/list" name="product_list" template="ecommistry/productlist/list.phtml">
+                    <block type="ecommistry_productlist/toolbar" name="product_list_toolbar" template="ecommistry/productlist/toolbar.phtml" />
+                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+                    <action method="setColumnCount"><name>4</name></action>
+                </block>
+            </block>
+        </reference>
+    </ecommistry_productlist_index_index>-->    
+</layout>

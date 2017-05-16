@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+ 
+<config>	
+    <modules>
+        <Ecommistry_ProductList>
+            <version>0.1.0</version>
+        </Ecommistry_ProductList>
+    </modules>
+	
+	<global>  
+		
+		<blocks>
+            <ecommistry_productlist><class>Ecommistry_ProductList_Block</class></ecommistry_productlist>
+        </blocks>
+		
+		<helpers>			
+            <Ecommistry_ProductList>
+                <class>Ecommistry_ProductList_Helper</class>
+            </Ecommistry_ProductList>
+        </helpers>
+		
+		<resources>
+            <productlist_setup>
+                <setup>
+                    <module>Ecommistry_ProductList</module>
+                </setup>
+            </productlist_setup>
+        </resources>
+		
+        <blocks>
+            <productlist>
+                <class>Ecommistry_ProductList_Block</class>
+            </productlist>
+        </blocks>
+		
+    </global>
+ 
+    <frontend>
+        <routers>
+            <ecommistry_productlist>
+                <use>standard</use>
+                <args>
+                    <module>Ecommistry_ProductList</module>
+                    <frontName>productlist</frontName>
+                </args>
+            </ecommistry_productlist>
+        </routers>
+		
+		<layout>
+            <updates>
+                <ecommistry_productlist>
+                    <file>ecommistry/productlist.xml</file>
+                </ecommistry_productlist>
+            </updates>
+        </layout>
+		
+    </frontend>
+	
+
+	<adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ecommistry>
+                                            <title>Product List Settings</title>
+                                        </ecommistry>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+	
+	
+    
+
+</config>
