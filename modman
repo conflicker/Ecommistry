@@ -1,0 +1,6 @@
+code                   			app/code/local/Ecommistry/ProductList/
+frontend/layout/*      			app/design/frontend/base/default/layout/ecommistry
+frontend/template/*				app/design/frontend/base/default/template/ecommistry/productlist
+Ecommistry_ProductList.xml		app/etc/modules/Ecommistry_ProductList.xml
+
+skin/*							skin/frontend/base/default/ecommistry/productlist
